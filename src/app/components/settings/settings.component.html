@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="div">
+    <mat-slider 
+        discrete
+        min=3
+        max=9
+        step="1"
+        thumbLabel="true"
+        tickInterval="auto"
+        >
+        <input matSliderThumb 
+        [(ngModel)]="sliderValue">
+    </mat-slider>   
+    <div>{{sliderValue}}</div>
+    <button routerLink="/play" (click)="onClick()">save</button>
+</div>
