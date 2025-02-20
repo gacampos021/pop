@@ -1,1 +1,1 @@
-<button [ngStyle]="{'top':top+'em', 'left':left+'em'}" (click)="handler()"></button>
+<button *ngIf="count < 2" [ngStyle]="{'top':top+'em', 'left':left+'em'}" (click)="handler()"></button>

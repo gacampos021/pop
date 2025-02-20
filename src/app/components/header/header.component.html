@@ -1,7 +1,15 @@
 <header class="container">
     <p>user</p>
-    <p>{{strTimer}}</p>
+    <p [ngStyle]="{'width':'5%'}">{{strTimer}}</p>
     <h1>POP THE BUBBLE!</h1>
-    <p>{{strPoints}}</p>
-    <button routerLink="/settings"><i class="fa-solid fa-gear"></i></button>
+    <p>{{strPoints}}{{points}}</p>
+    <p><button routerLink="/settings"><i class="fa-solid fa-gear"></i></button></p>
 </header>
+<button (click)="showEndScreen()">Fechar</button>
+<div class="popup" *ngIf="flagEndScreen" class="popup">
+    <p>Your Time: {{strTimer}}</p>
+    <p>Total Bubbles Popped: {{points}}</p>
+    <button (click)="resetGame()">Replay</button>
+    <button routerLink="/settings">Change Settings</button>
+    <button routerLink="/" >Exit</button>
+</div>

@@ -19,9 +19,29 @@ div {
     margin: 2em auto;
     padding: 10px;
     position: relative;
-    border-radius: 2%
+    border-radius: 2%;
+}
+.popup{
+    height: 50em;
+    width: 70em;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    border: black;  
+    border-width: 1px;
+    border-style:dashed;
+    transform: translate(-50%, -50%);
+    z-index: 100; 
+    background-color: rgba(41, 41, 41, 0.5);
+    backdrop-filter: blur(1.4px)
 }
 .fa-gear {
     font-size: 40px;
-  }
+}
+p{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
   

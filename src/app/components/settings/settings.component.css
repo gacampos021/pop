@@ -1,5 +1,12 @@
+div{
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
 .slider {
-    background-color: #007bff;
-
-  }
- 
+  background-color: #007bff;
+}
+.settingsContainer{
+  display: grid;
+  
+}

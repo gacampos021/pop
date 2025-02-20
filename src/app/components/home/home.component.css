@@ -1,0 +1,13 @@
+.play-button{
+    font-size: large;
+    width: 50%;
+    height: 50%;
+    background-color: #7a7;
+    border-radius: 1em;
+    border: none;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
