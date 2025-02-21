@@ -7,9 +7,20 @@
 </header>
 <button (click)="showEndScreen()">Fechar</button>
 <div class="popup" *ngIf="flagEndScreen" class="popup">
-    <p>Your Time: {{strTimer}}</p>
-    <p>Total Bubbles Popped: {{points}}</p>
-    <button (click)="resetGame()">Replay</button>
-    <button routerLink="/settings">Change Settings</button>
-    <button routerLink="/" >Exit</button>
+    <div class="popup-top">
+        <h1>CONGRATULATIONS!</h1>
+    </div>
+    <div class="popup-info">
+        <div class="left">
+            <p clss="data">Your Time: {{strTimer}}</p>
+        </div>
+        <div class="right">
+            <p class="info">Total Bubbles Popped: {{points}}</p>
+        </div>
+    </div>
+    <div class="popup-bottom">
+        <button class="replay" (click)="resetGame()">Replay</button>
+        <button class="settings" routerLink="/settings">Change Settings</button>
+        <button class="exit" routerLink="/" >Exit</button>
+    </div>
 </div>

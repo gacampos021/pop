@@ -18,8 +18,8 @@ export class BubbleComponent {
   constructor(private pointsService: PointsService){}
 
   randomizer(): void{
-    this.top = Math.floor(Math.random() * 55);
-    this.left = Math.floor(Math.random() * 115);
+    this.top = Math.floor(Math.random() * 50);
+    this.left = Math.floor(Math.random() * 110);
   }
 
   handler():void{
