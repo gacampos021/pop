@@ -16,10 +16,15 @@ export class SettingsComponent {
 
   constructor(private setService: SettingsService) {}
   ngOnInit(){
-    this.sliderValue = this.setService.qntBubbles;
+    this.setService.getData().subscribe(response => {
+      this.sliderValue = response
+    });
   }
 
   onClick(){
-    this.setService.setQnt(this.sliderValue)
+    this.setService.postData(this.sliderValue).subscribe(response => {
+      console.log(response);
+    });
   }
 }
+

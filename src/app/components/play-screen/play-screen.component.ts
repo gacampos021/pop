@@ -13,12 +13,13 @@ import { HeaderComponent } from '../header/header.component';
 export class PlayScreenComponent {
   constructor(private setService: SettingsService){}
   bubbles:any;
-  qnt: number=3;
+  qnt!: any;
   sender: number=0;
 
   ngOnInit() {
-    this.qnt = this.setService.qntBubbles;
-    this.bubbles = Array.from({length: this.qnt})
+    this.setService.getData().subscribe(data => {
+      this.bubbles = Array.from({length: data})
+    });
   }
   
   handler(points: number){

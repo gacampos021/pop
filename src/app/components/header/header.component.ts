@@ -22,6 +22,7 @@ export class HeaderComponent {
   mili: any = 0;
   sec: any = 0;
   flagEndScreen: boolean = false;
+  qnt: number = 3;
   
   constructor(private router: Router, private pointsService: PointsService, private settingsService: SettingsService) {}
 
@@ -40,8 +41,11 @@ export class HeaderComponent {
           this.sec = Math.floor(this.timerLive / 1000);
           this.mili = this.timerLive % 1000;
           this.strTimer = this.sec+':'+this.mili;
+          this.settingsService.getData().subscribe(data => {
+            this.qnt = data
+          });
         }
-        if(this.points == this.settingsService.qntBubbles*2){
+        if(this.points == this.qnt*2){
           this.activateTimer = false;
           if(!this.flagEndScreen){this.showEndScreen();}
         }
