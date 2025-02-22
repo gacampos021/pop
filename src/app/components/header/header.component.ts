@@ -31,6 +31,9 @@ export class HeaderComponent {
   }
 
   iniciarCronometro(): void {
+    this.settingsService.getData().subscribe(data => {
+      this.qnt = data.qntBubbles
+    });
     if (!this.activateTimer) {
       this.activateTimer = true;
       this.timerZero = Date.now() - this.timerLive; 
@@ -41,9 +44,6 @@ export class HeaderComponent {
           this.sec = Math.floor(this.timerLive / 1000);
           this.mili = this.timerLive % 1000;
           this.strTimer = this.sec+':'+this.mili;
-          this.settingsService.getData().subscribe(data => {
-            this.qnt = data
-          });
         }
         if(this.points == this.qnt*2){
           this.activateTimer = false;

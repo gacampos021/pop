@@ -18,7 +18,7 @@ export class PlayScreenComponent {
 
   ngOnInit() {
     this.setService.getData().subscribe(data => {
-      this.bubbles = Array.from({length: data})
+      this.bubbles = Array.from({length: data.qntBubbles})
     });
   }
   

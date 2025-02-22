@@ -12,18 +12,35 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
-  sliderValue: any;
+  sliderValue!: number;
 
   constructor(private setService: SettingsService) {}
   ngOnInit(){
     this.setService.getData().subscribe(response => {
-      this.sliderValue = response
+      this.sliderValue = response.qntBubbles
     });
+    
   }
 
   onClick(){
-    this.setService.postData(this.sliderValue).subscribe(response => {
+    let data= {'qntBubbles': this.sliderValue}
+    this.setService.postData(JSON.stringify(data)).subscribe(response => {
+      try{
       console.log(response);
+      }
+      catch(e){
+        console.log(e);
+        
+      }
+    });
+    this.setService.fitJson(data).subscribe(response => {
+      try{
+      console.log(response);
+      }
+      catch(e){
+        console.log(e);
+        
+      }
     });
   }
 }

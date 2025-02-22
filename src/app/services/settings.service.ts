@@ -11,11 +11,15 @@ export class SettingsService {
   private http: HttpClient = inject(HttpClient);
 
   getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl+'qntBubbles');
+    return this.http.get<any>(this.apiUrl+'settings/');
   }
 
   postData(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, data);
+    return this.http.patch<any>(this.apiUrl+'settings/', data);
+  }
+
+  fitJson(data: any): Observable<any>{
+    return this.http.delete<any>(this.apiUrl+'/settings', data);
   }
 
  /*  setQnt(qnt:number){
