@@ -1,19 +1,22 @@
+
 .container{
-    background-color: antiquewhite;
     height: 0.4em;
     width: 85%;
     margin: 2em auto;
     margin-top: 40px;
-    margin-bottom: 5px;
+    margin-bottom: none;
     padding: 20px;
-    padding-bottom: 40px;
+    padding-bottom: none;
     font-size: 2rem;
     display: flex;
     justify-content: space-around;
     align-items:center;
 }
-.fa-gear {
-    font-size: 40px;
+.fa-gear  {
+    font-size: 2rem;
+}
+.fas{
+    font-size: 2rem;
 }
 .popup{
     height: 50em;
@@ -72,5 +75,7 @@
 }
 button{
     width: 50px;
-    height: 50px;
+    height: 50px; 
+    border: none;
+    background-color: transparent;
 }

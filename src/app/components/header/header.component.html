@@ -1,11 +1,7 @@
 <header class="container">
-    <p>user</p>
     <p [ngStyle]="{'width':'5%'}">{{strTimer}}</p>
-    <h1>POP THE BUBBLE!</h1>
     <p>{{strPoints}}{{points}}</p>
-    <p><button routerLink="/settings"><i class="fa-solid fa-gear"></i></button></p>
 </header>
-<button (click)="showEndScreen()">Fechar</button>
 <div class="popup" *ngIf="flagEndScreen" class="popup">
     <div class="popup-top">
         <h1>CONGRATULATIONS!</h1>
@@ -19,8 +15,8 @@
         </div>
     </div>
     <div class="popup-bottom">
-        <button class="replay" (click)="resetGame()">Replay</button>
-        <button class="settings" routerLink="/settings">Change Settings</button>
-        <button class="exit" routerLink="/" >Exit</button>
+        <button class="replay" (click)="resetGame()"><i class="fas fa-rotate-left"></i></button>
+        <button class="settings" routerLink="/settings"><i class="fa-solid fa-gear"></i></button>
+        <button class="exit" routerLink="/" ><i class="fas fa-house"></i></button>
     </div>
 </div>
